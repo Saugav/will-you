@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Will You Be My Valentine?</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      #question {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+      #btnYes {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-right: 10px;
+      }
+      #btnNo {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="question">Will you be my Valentine?</h1>
+    <button id="btnYes">Yes</button>
+    <button id="btnNo">No</button>
+
+    <script>
+      let yesBtn = document.getElementById("btnYes");
+      let noBtn = document.getElementById("btnNo");
+      let question = document.getElementById("question");
+
+      yesBtn.addEventListener("click", function () {
+        question.innerHTML = "sanju wow";
+        question.style.fontSize = "36px";
+      });
+
+      let yesCount = 0;
+      noBtn.addEventListener("click", function () {
+        yesCount++;
+        let currentSize = parseInt(yesBtn.style.fontSize) || 16;
+        let newSize = currentSize + yesCount * 2;
+        yesBtn.style.fontSize = newSize + "px";
+      });
+    </script>
+  </body>
+</html>
